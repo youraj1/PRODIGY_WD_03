@@ -1,0 +1,129 @@
+body {
+    background: #f0f0f0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    position: relative;
+}
+
+.container {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif 'Luckiest Guy', 'Comic Sans MS', cursive, sans-serif;
+    font-size: 3.2rem;
+    background: linear-gradient(70deg, #06cbf7, #ee0615);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 4px 24px #fffbe6, 0 2px 8px #b721ff99;
+    letter-spacing: 2px;
+    animation: title-glow 2.5s infinite alternate;
+}
+
+@keyframes title-glow {
+    0% {
+        text-shadow: 0 4px 14px #fffbe6, 0 2px 8px #2190ff99;
+    }
+
+}
+
+.mode-select {
+    margin-bottom: 1rem;
+}
+
+.mode-select button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.mode-select button:hover {
+    background: #0056b3;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.cell {
+    width: 80px;
+    height: 80px;
+    background: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    border-radius: 5px;
+    cursor: help;
+    transition: background 0.2s;
+    user-select: none;
+}
+
+.cell:hover {
+    background: #d4edda;
+}
+
+.cell.win {
+    background: #e2cb70 !important;
+    animation: win-pop 0.7s cubic-bezier(.68, -0.55, .27, 1.55) 2 alternate;
+    box-shadow: 0 0 20px 5px #ffe066, 0 0 40px 10px #fffbe6;
+}
+
+@keyframes win-pop {
+    0% {
+        transform: scale(1);
+    }
+
+    60% {
+        transform: scale(1.2) rotate(-5deg);
+    }
+
+    100% {
+        transform: scale(1.1) rotate(3deg);
+    }
+}
+
+#message {
+    min-height: 2rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+#restart-btn {
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: #28a745;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#restart-btn:hover {
+    background: #218838;
+}
